@@ -5,7 +5,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
   },
   {
     path: '/about',
@@ -13,13 +13,32 @@ const routes: Array<RouteRecordRaw> = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    component: () =>
+      import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+  },
+  {
+    path: '/index',
+    name: 'Index',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ '../views/IndexView.vue'),
+  },
+  {
+    path: '/release',
+    name: 'Release',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ '../views/ReleaseView.vue'),
+  },
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
 })
 
 export default router
